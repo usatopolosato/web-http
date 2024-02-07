@@ -22,7 +22,8 @@ def spn_selection(geocode):
     # Получаем первый топоним из ответа геокодера.
     toponym = json_response["response"]["GeoObjectCollection"][
         "featureMember"][0]["GeoObject"]
-    fi = float(toponym["boundedBy"]['Envelope']['upperCorner'].split()[0]) - float(toponym["boundedBy"]['Envelope']['lowerCorner'].split()[0])
+    fi = float(toponym["boundedBy"]['Envelope']['upperCorner'].split()[0]) - float(
+        toponym["boundedBy"]['Envelope']['lowerCorner'].split()[0])
     se = float(toponym["boundedBy"]['Envelope']['upperCorner'].split()[1]) - float(
         toponym["boundedBy"]['Envelope']['lowerCorner'].split()[1])
     return str(fi), str(se)
